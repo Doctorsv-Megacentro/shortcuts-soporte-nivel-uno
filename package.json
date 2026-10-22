@@ -1,0 +1,14 @@
+{
+  "name": "atajos-n1",
+  "version": "27.0.0",
+  "private": true,
+  "description": "Panel de atajos para el soporte tecnico N1 de DoctorSV (marcador del navegador)",
+  "scripts": {
+    "build": "node build/construir.mjs",
+    "test": "node pruebas/smoke.js /tmp/atajos-n1-smoke.txt"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "terser": "^5.51.2"
+  }
+}

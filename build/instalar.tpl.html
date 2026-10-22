@@ -1,0 +1,146 @@
+<title>Atajos N1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna estrecha tipo hoja de procedimiento; la instalación arriba, el catálogo de acciones abajo en rejilla de 2. */
+:root{
+  --bg:#f3f6f5; --panel:#ffffff; --fg:#14211d; --mut:#5d6f69; --line:#d6e0dc;
+  --ac:#0b7a5e; --ac-fg:#ffffff; --ac-soft:#e1f1eb; --warn:#9a5200; --code:#eaf0ee;
+  --f-sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1614; --panel:#15201d; --fg:#e4ece9; --mut:#93a7a0; --line:#27352f;
+  --ac:#2fbf93; --ac-fg:#06140f; --ac-soft:#173a2f; --warn:#f0b06a; --code:#101a17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1614; --panel:#15201d; --fg:#e4ece9; --mut:#93a7a0; --line:#27352f;
+  --ac:#2fbf93; --ac-fg:#06140f; --ac-soft:#173a2f; --warn:#f0b06a; --code:#101a17; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:15px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:36px 56px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+h1{font-size:32px;line-height:1.15;margin:0;font-weight:700;text-wrap:balance}
+.lead{margin:0;color:var(--mut);max-width:62ch}
+h2{font-size:17px;margin:0 0 12px;font-weight:600;text-wrap:balance}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+.install{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.bm{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--ac);color:var(--ac-fg);font-weight:600;text-decoration:none;cursor:grab;white-space:nowrap;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.bm:focus-visible,button:focus-visible,textarea:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.install p{margin:0;min-width:0}
+.alt{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:10px}
+.alt ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+textarea{width:100%;height:76px;resize:vertical;font-family:var(--f-mono);font-size:11.5px;line-height:1.4;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--code);color:var(--fg);word-break:break-all}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-weight:600;font-size:14px;padding:8px 14px;border-radius:8px;border:1px solid var(--ac);background:var(--ac-soft);color:var(--fg);cursor:pointer}
+button:hover{background:var(--ac);color:var(--ac-fg)}
+.ok{font-size:13px;color:var(--ac);font-weight:600}
+.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.steps li::marker{font-family:var(--f-mono);color:var(--mut)}
+kbd{font-family:var(--f-mono);font-size:12px;padding:1px 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;background:var(--code)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.a{background:var(--panel);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.a b{font-weight:600;font-size:14.5px}
+.a.wide{grid-column:1/-1}
+.a span{font-size:13px;color:var(--mut)}
+.notes{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.notes strong{color:var(--warn);font-weight:600}
+.msg{font-family:var(--f-mono);font-size:12.5px;line-height:1.5;background:var(--code);border-radius:8px;padding:12px 14px;white-space:pre-wrap;margin:0;overflow-x:auto}
+footer{font-size:12.5px;color:var(--mut);font-family:var(--f-mono)}
+@media (max-width:560px){.install{grid-template-columns:1fr}.grid{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">N1 TIC · DoctorSV · WhatsApp Web</span>
+    <h1>Atajos N1</h1>
+    <p class="lead">Un marcador que abre un panel encima de WhatsApp Web. Llenas dos o tres datos y el mensaje del grupo queda escrito en el chat y copiado, listo para revisar y enviar.</p>
+  </header>
+
+  <section aria-labelledby="h-inst">
+    <h2 id="h-inst">1. Instalar el marcador</h2>
+    <div class="install">
+      <a class="bm" id="bm" href="__BOOKMARKLET__" title="Arrástrame a la barra de marcadores">⚡ Atajos N1</a>
+      <p>Arrastra el botón verde a tu barra de marcadores. Si no ves la barra, muéstrala con <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>. No hagas clic en él aquí: solo funciona dentro de WhatsApp Web.</p>
+    </div>
+    <div class="alt">
+      <p style="margin:0"><b>Si arrastrar no funciona</b>, créalo a mano:</p>
+      <ol>
+        <li>Copia la línea de abajo (empieza con <code>javascript:</code>).</li>
+        <li>Clic derecho en la barra de marcadores → <i>Agregar página</i> (o <i>Agregar favorito</i> en Edge).</li>
+        <li>Nombre: <b>Atajos N1</b>. En el campo URL pega el código y guarda.</li>
+      </ol>
+      <textarea id="code" readonly aria-label="Código del marcador">__RAW__</textarea>
+      <div class="row"><button type="button" id="copy">Copiar marcador</button><span class="ok" id="ok" hidden>Copiado</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-uso">
+    <h2 id="h-uso">2. Usarlo</h2>
+    <ol class="steps">
+      <li>Abre WhatsApp Web y entra al chat del grupo.</li>
+      <li>Toca el marcador <b>Atajos N1</b>. Aparece el panel flotante: arrástralo desde la barra de arriba para moverlo y usa <b>–</b> para ocultarlo sin cerrarlo.</li>
+      <li>Elige la acción, llena los campos y revisa la vista previa. Puedes editar el texto ahí mismo antes de mandarlo.</li>
+      <li><b>Escribir + copiar</b> deja el mensaje en la caja del chat. <b>No se envía solo</b>: revisa y presiona <kbd>Enter</kbd>.</li>
+      <li>Vuelve a tocar el marcador para cerrar el panel.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-acc">
+    <h2 id="h-acc">Acciones incluidas</h2>
+    <div class="grid">
+      <div class="a wide"><b>Responder a médicos</b><span>Verificado ✅, Solventado ✅, Enseguida 🫡 y Con gusto 😊. Un clic y queda escrito.</span></div>
+      <div class="a wide"><b>Herramientas → Diagnóstico rápido</b><span>Un clic empieza a grabar las solicitudes y la consola de la página; el panel queda como barrita con el tiempo y los fallos. Reproduces el problema, tocas ■ y se descarga un .md con lo que falló (headers, payload, respuesta, endpoints por pantalla y consola). Contraseñas, tokens y cookies salen ocultos.</span></div>
+      <div class="a wide"><b>Pestaña N2</b><span>Lista para las acciones de N2; por ahora dice "Próximamente".</span></div>
+      <div class="a wide"><b>Ticket de ronda</b><span>Inicio de operaciones, ronda intermedia o cierre. Genera Solicitante, Resumen del caso, Descripción y Comentario de cierre; cada uno se copia, o el botón <b>Llenar en SDP</b> los escribe directo en el ticket (no guarda ni cierra).</span></div>
+      <div class="a wide"><b>Gestionando / Escalado (SDP)</b><span>Abierto sobre un ticket de SDP, toma el número, el TSJ y las tipificaciones 2 y 3 y arma "gestionando 2776985" o "SDP# … ||[TSJ-…](link) || … || …" listo para copiar a Google Chat.</span></div>
+      <div class="a"><b>Credenciales NERDS</b><span>Alta, restablecer contraseña o quitar doble verificación. Varios médicos en un solo mensaje.</span></div>
+      <div class="a"><b>Status de slot</b><span>TM1, TM2, TM3, HES o Megacentro por slot. Cada status sale con otra redacción para no repetir el del slot anterior; ↻ cambia la redacción.</span></div>
+      <div class="a"><b>Apoyo de soporte</b><span>Ubicación primero (ej. TM1-J12) y la falla: HDMI, hub, Ethernet, headset, monitor, cargador…</span></div>
+      <div class="a"><b>Respuestas al grupo</b><span>"Enseguida validamos", "Validado", seguimiento. Un clic y queda escrito.</span></div>
+      <div class="a"><b>Lluvia / filtraciones</b><span>Inicio de lluvia, filtración por área, sin filtraciones o filtración solventada.</span></div>
+      <div class="a"><b>Corte de energía</b><span>Reporte del corte y validación de citas después.</span></div>
+      <div class="a"><b>Validar OTP</b><span>Uno o varios números; agrega 503 si pones solo 8 dígitos.</span></div>
+      <div class="a"><b>NERDS en triage</b><span>Validación con UGP Triage o salas, con prueba de llamada y transferencia.</span></div>
+      <div class="a"><b>Latencia TCA / Assist</b><span>Puesto, slot, tiempo, conexión, pestañas, solución y datos del médico.</span></div>
+      <div class="a"><b>Copiloto</b><span>Verificar correo en la BD o reportar falla con ID de cita y liga Meet.</span></div>
+      <div class="a"><b>Visita</b><span>Ingreso, retiro o en espera de visita.</span></div>
+      <div class="a"><b>Localizar médico</b><span>En consulta, disponible, se retiró o no se encuentra.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ej">
+    <h2 id="h-ej">Ejemplo de salida</h2>
+    <pre class="msg">Buenas tardes, me apoyan con el alta y credenciales de NERDS para los siguientes médicos de nuevo ingreso (aún no tienen cuenta):
+
+Karla Martínez
+karla.martinez@doctorsv.gob.sv
+
+Luis Pérez
+luis.perez@doctorsv.gob.sv</pre>
+  </section>
+
+  <section aria-labelledby="h-not">
+    <h2 id="h-not">A tomar en cuenta</h2>
+    <ul class="notes">
+      <li><strong>Si el texto no aparece en el chat</strong>, ya está copiado: haz clic en la caja del chat y pega con <kbd>Ctrl</kbd>+<kbd>V</kbd>.</li>
+      <li><strong>Las menciones @ salen como texto.</strong> Para que notifiquen, borra el nombre y vuelve a escribir @ eligiendo a la persona de la lista.</li>
+      <li><strong>El marcador también abre en SDP.</strong> Para el ticket de ronda, ábrelo en la pestaña del ticket y copia campo por campo.</li>
+      <li>El saludo (buenos días / tardes / noches) y el slot se ponen solos según la hora; el panel recuerda la última ubicación que usaste.</li>
+      <li>Los campos marcados con * avisan con "Falta:" si quedan vacíos, pero puedes enviar igual.</li>
+    </ul>
+  </section>
+
+  <footer>v1 · 5 oct 2026 · Para Chrome y Edge de escritorio</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'),t=document.getElementById('code'),ok=document.getElementById('ok');
+  b.addEventListener('click',function(){
+    var done=function(){ok.hidden=false;setTimeout(function(){ok.hidden=true},2000)};
+    var fallback=function(){t.focus();t.select();try{document.execCommand('copy')&&done()}catch(e){}};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback)}else{fallback()}
+  });
+  document.getElementById('bm').addEventListener('click',function(e){e.preventDefault()});
+})();
+</script>
